@@ -1,0 +1,18 @@
+header {
+
+  .txt h1 {
+    font: 600 1.5rem/125% var(--font-family);
+    padding-bottom: .5rem;
+  }
+
+  p {
+  font: 400 1rem/150% var(--font-family);
+  color: var(--text-secondary);
+  }
+}
+
+.back {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
