@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-primary: #292524;
+  --text-secondary: #57534E;
+  --text-tertiary: #8F8881;
+  --text-hightlight: #E43A12;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #FEE7D6;
+  --surface-disabled: #E7E5E4;
+  --stroke-default: #D6D3D1;
+  --stroke-highlight: #F3541C;
+
+  --font-family:"Poppins", sans-serif;
+  --h1: 800 2rem/120% var(--font-family);
+  --h2: 800 1.5rem/120% var(--font-family);
+  --h3: 800 1.25rem/120% var(--font-family);
+  --h4: 800 1rem/120% var(--font-family);
+} 
+
+body {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
