@@ -96,10 +96,6 @@ input[type="date"] {
   p {
     font: 400 1rem/150%var(--font-family);
     color: #A8A29E;
-  }
-
-  img:focus, img:hover {
-
   } 
  }
 
@@ -132,9 +128,30 @@ input[type="date"] {
 
     color: var(--text-primary);
   }
+
+  &:invalid {
+    border: .125rem solid var(--semantic-error);
+  }
+
+  & + small {
+    font: 400 .875rem/140% var(--font-family);
+  color: #78716C;
+  display: inline-block;
+  padding-top: .25rem;
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font: 400 .875rem/140% var(--font-family);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
  }
-
-
-
-
 
