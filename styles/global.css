@@ -25,6 +25,8 @@
 
 body {
   overflow: hidden;
+
+  color: var(--text-primary);
 }
 
 img {
