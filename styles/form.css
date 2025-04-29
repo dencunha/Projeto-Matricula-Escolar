@@ -28,7 +28,7 @@ label {
 input, select, textarea {
   width: 100%;
   border-radius: .5rem;
-  border: .125px solid var(--stroke-default);
+  border: 1px solid var(--stroke-default);
 
   appearance: none;
 
@@ -40,7 +40,7 @@ select:focus, select:hover,
 textarea:focus, textarea:hover,
 input[type="date"]:focus-within {
   outline: .25rem solid var(--surface-secondary);
-  border: .125px solid var(--stroke-highlight);
+  border: 1px solid var(--stroke-highlight);
   outline-offset: .1px;
 }
 
@@ -99,7 +99,7 @@ input[type="date"] {
   } 
  }
 
- .file:focus, .file:hover {
+.file:focus, .file:hover {
   background-color: var(--surface-secondary);
   border: 1px dashed var(--stroke-highlight);
   
@@ -111,17 +111,17 @@ input[type="date"] {
   & svg path {
     stroke: var(--stroke-highlight);
   }
- }
+}
 
- .adress .flex {
+.adress .flex {
   gap: 1.25rem;
- }
+}
 
- .input-wrapper:has([disabled]) {
+.input-wrapper:has([disabled]) {
   opacity: .5;
- }
+}
 
- input {
+input {
   &[disabled] {
     background-color: var(--surface-disabled);
     border: 1px solid var(--stroke-default);
@@ -153,5 +153,134 @@ input[type="date"] {
   &:not(:focus):valid + .error {
     display: none;
   }
- }
+}
 
+label + .radio-wrapper {
+  margin-top: 1rem;
+}
+
+.radio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 1rem;
+}
+
+.radio-inner {
+  border: .125rem solid var(--stroke-default);
+  border-radius: .5rem;
+
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  padding: 2rem .5rem .5rem;
+
+  position: relative;
+
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  .radio-img {
+    background-image: url(/assets/icons-options/circle-default.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+  }
+
+  &:hover, &:focus-within {
+    border: .125rem solid var(--stroke-highlight);
+
+    & .radio-img {
+      background-image: url(/assets/icons-options/circle-focus.svg);
+    }
+  }
+
+  &:has(:checked) {
+    border: .125rem solid var(--stroke-highlight);
+
+    & .radio-img {
+      background-image: url(/assets/icons-options/checkmark-circle-01.svg);
+    }
+  }
+}
+
+.terms-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+
+  & strong {
+    font-weight: 500;
+    color: var(--text-hightlight);
+  }
+}
+
+.checkbox-wrapper {
+  position: relative;
+
+  & [type="checkbox"] {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  .checkbox-img {
+    flex: 0 0 1.5rem;
+    height: 1.5rem;
+    background-image: url(/assets/icons-options/square-default.svg);
+  }
+
+  &:hover .checkbox-img, &:focus-within .checkbox-img {
+    background-image: url(/assets/icons-options/checkbox-hover.svg);
+  }
+
+  &:has(:checked) .checkbox-img {
+    background-image: url(/assets/icons-options/checkmark-square-01.svg);
+  }
+}
+
+.actions-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+
+
+}
+
+button {
+  padding: .75rem 1.5rem;
+  border-radius: .5rem;
+  border: 1px solid var(--text-hightlight);
+  cursor: pointer;
+
+  &.save {
+    background-color: #ffffff;
+    font: 600 1rem/150% var(--font-family);
+    color: var(--text-hightlight);
+  
+    margin-left: auto;
+  }
+
+  &.save:hover, &.save:focus-within {
+    outline: .25rem solid var(--surface-secondary);
+    border: 1px solid var(--stroke-highlight);
+    outline-offset: .1px;
+  }
+
+  &.mat {
+    font: 600 1rem/150% var(--font-family);
+    color: #ffffff;
+    background-color: var(--text-hightlight);
+  }
+
+  &.mat:hover, &.save:focus-within {
+    background-color: var(--stroke-highlight);
+  }
+  }
